@@ -1,9 +1,13 @@
-#!/Library/Frameworks/Python.framework/Versions/3.5/bin/python3
-import time
-import tkinter
-from tkinter import *
+#!/bin/pythonw
 
+import Tkinter
+from Tkinter import *
+import tkMessageBox
+def wip():
+    print("This is under construction")
+    tkMessageBox.showerror("Under construction", "Expected release date: April 1, 2020")
 window = Tk()
-label = Label(window, text="label")
-label.pack()
+Label(window, text="label").pack()
+Button(window, text="Enable chime", command=wip).pack()
+Button(window, text="Disable chime", command=wip).pack()
 window.mainloop()
