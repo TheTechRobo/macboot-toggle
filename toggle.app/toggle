@@ -3,12 +3,22 @@
 import Tkinter
 from Tkinter import *
 import tkMessageBox
+def enableChime():
+    password = 0 #just temporarily
+    os.system("echo '", password, "' | sudo -S nvram StartupMute=%00")
+    tkMessageBox.showinfo("Complete", "Please restart your Mac to see if it worked")
+def enableChimeClassic():
+    password = 0 #just temporarily
+    os.system("echo '", password, "' | sudo -S nvram BootAudio=%01")
 def wip():
     print("This is under construction")
     tkMessageBox.showerror("Under construction", "Expected release date: April 1, 2020")
 window = Tk()
 window.title("macBoot Toggle")
 Label(window, text="Welcome to macBoot Toggle!").pack()
+Label(window, text="Unfortunately, this command does not work on all Mac models. Your mileage may vary.").pack()
 Button(window, text="Enable chime", command=wip).pack()
 Button(window, text="Disable chime", command=wip).pack()
+Button(window, text="Enable chime (classic)", command=enableChimeClassic).pack()
+Button(window, text="Disable chime (classic)", command=)
 window.mainloop()
