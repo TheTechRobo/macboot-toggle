@@ -12,10 +12,10 @@ def enableChimeClassic():
     os.system("echo '", password, "' | sudo -S nvram BootAudio=%01")
 def disableChime():
     password = 0 #temporarily
-    os.system("echo '", password, "' | sudo -S nvram StartupMute=%00")
+    os.system("echo '", password, "' | sudo -S nvram StartupMute=%01")
 def disableChimeClassic():
     password = 0 #just temporarily
-    os.system("echo '", password, "' | sudo -S nvram BootAudio=%01")
+    os.system("echo '", password, "' | sudo -S nvram BootAudio=%00")
 def wip():
     print("This is under construction")
     tkMessageBox.showerror("Under construction", "Expected release date: April 1, 2020")
