@@ -10,6 +10,12 @@ def enableChime():
 def enableChimeClassic():
     password = 0 #just temporarily
     os.system("echo '", password, "' | sudo -S nvram BootAudio=%01")
+def disableChime():
+    password = 0 #temporarily
+    os.system("echo '", password, "' | sudo -S nvram StartupMute=%00")
+def disableChimeClassic():
+    password = 0 #just temporarily
+    os.system("echo '", password, "' | sudo -S nvram BootAudio=%01")
 def wip():
     print("This is under construction")
     tkMessageBox.showerror("Under construction", "Expected release date: April 1, 2020")
@@ -19,6 +25,6 @@ Label(window, text="Welcome to macBoot Toggle!").pack()
 Label(window, text="Unfortunately, this command does not work on all Mac models. Your mileage may vary.").pack()
 Button(window, text="Enable chime", command=wip).pack()
 Button(window, text="Disable chime", command=wip).pack()
-Button(window, text="Enable chime (classic)", command=enableChimeClassic).pack()
-Button(window, text="Disable chime (classic)", command=)
+Button(window, text="Enable chime (classic)", command=wip).pack()
+Button(window, text="Disable chime (classic)", command=wip).pack()
 window.mainloop()
