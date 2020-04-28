@@ -7,7 +7,7 @@ from subprocess import Popen
 
 def getPassWord(w, command):
     passWord = w.get()
-    Popen(["echo '", password, "' | ", command], shell=True)
+    Popen(["echo '", passWord, "' | ", command], shell=True)
 def enableChime():
     hello = Toplevel()
     Label(hello, text="Enter password here:").pack()
