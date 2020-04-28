@@ -8,13 +8,13 @@ from subprocess import Popen
 def getPassWord(w, command):
     passWord = w.get()
     Popen(["echo '", passWord, "' | ", command], shell=True)
+    tkMessageBox.showinfo("Complete", "Please restart your Mac to see if it worked")
 def enableChime():
     hello = Toplevel()
     Label(hello, text="Enter password here:").pack()
     w = Entry( hello, show="*")
     w.pack()
     Button(hello, text="OK", command=(getPassWord(w, "sudo -S nvram StartupMute=%00"))).pack()
-    tkMessageBox.showinfo("Complete", "Please restart your Mac to see if it worked")
 def enableChimeClassic():
     hello = Toplevel()
     Label(hello, text="Enter password here:").pack()
