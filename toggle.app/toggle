@@ -11,27 +11,27 @@ def getPassWord(w, command):
 def enableChime():
     hello = Toplevel()
     Label(hello, text="Enter password here:").pack()
-    w = Entry( hello, show="•")
+    w = Entry( hello, show="*")
     w.pack()
     Button(hello, text="OK", command=(getPassWord(w, "sudo -S nvram StartupMute=%00")))
     tkMessageBox.showinfo("Complete", "Please restart your Mac to see if it worked")
 def enableChimeClassic():
     hello = Toplevel()
     Label(hello, text="Enter password here:").pack()
-    w = Entry( hello, show="•")
+    w = Entry( hello, show="*")
     w.pack()
     Button(hello, text="OK", command=(getPassWord(w, "sudo -S nvram BootAudio=%01")))
 def disableChime():
     hello = Toplevel()
     Label(hello, text="Enter password here:").pack()
-    w = Entry( hello, show="•")
+    w = Entry( hello, show="*")
     w.pack()
     Button(hello, text="OK", command=(getPassWord(w, "sudo -S nvram StartupMute=%01")))
     os.system("echo '", password, "' | sudo -S nvram StartupMute=%01")
 def disableChimeClassic():
     hello = Toplevel()
     Label(hello, text="Enter password here:").pack()
-    w = Entry( hello, show="•")
+    w = Entry( hello, show="*")
     w.pack()
     Button(hello, text="OK", command=(getPassWord(w, "sudo -S nvram BootAudio=%00")))
 def wip():
